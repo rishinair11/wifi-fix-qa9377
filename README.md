@@ -1,8 +1,20 @@
 # WIFI Fix for Qualcomm Atheros QCA9377
+## Automatic Setup
+- Run the `install-service.sh` script
+```bash
+sudo ./install-service.sh
+```
+- Once the script finishes execution, reboot the system to apply the changes
+```bash
+sudo reboot
+```
 
-## Setup
+## Manual Setup
 
-- Clone the Git repository
+- Become `sudo`
+```bash
+sudo -s
+```
 
 - Copy the `wifi-fix.sh` file into `/usr/local/src`
 ```bash
@@ -17,22 +29,22 @@ chmod 777 /usr/local/src/wifi-fix.sh
 - Copy `wifi-fix.service` into `/etc/systemd/system/`
 
 ```bash
-cp wifi-fix.sh /etc/systemd/system/wifi-fix.service
+cp wifi-fix.service /etc/systemd/system/wifi-fix.service
 ```
 
 - Enable the service
 ```bash
-sudo systemctl enable wifi-fix.service
+systemctl enable wifi-fix.service
 ```
 
 - Run `daemon-reload` for `systemd`
 ```bash
-sudo systemctl daemon-reload
+systemctl daemon-reload
 ```
 
 - Reboot the system
 ```bash
-sudo reboot
+reboot
 ```
 
 This will make sure that the wifi-fix service will run after the Network connection is established, on every boot.
