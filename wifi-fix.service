@@ -1,0 +1,13 @@
+[Unit]
+Description=Fixes slow wifi speed issue in QCA9377 adapter
+Documentation=https://askubuntu.com/questions/1033679/qualcomm-atheros-weak-wifi-signal-on-ubuntu-18-04
+Requires=network-online.target
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=idle
+ExecStart=/usr/local/src/wifi-fix.sh
+
+[Install]
+WantedBy=multi-user.target
