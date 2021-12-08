@@ -1,8 +1,8 @@
 # WIFI Fix for Qualcomm Atheros QCA9377
 ## Automatic Setup
-- Run the `install-service.sh` script
+- Run `make`
 ```bash
-sudo ./install-service.sh
+sudo make
 ```
 - Once the script finishes execution, reboot the system to apply the changes
 ```bash
